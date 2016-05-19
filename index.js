@@ -15,7 +15,7 @@ return function deepmerge(target, src) {
     if (array && deepmerge.mergeArrays !== false) {
         target = target || [];
         dst = dst.concat(target);
-        src.forEach(function(e, i) {
+        src.forEach(function (e, i) {
             if (typeof dst[i] === 'undefined') {
                 dst[i] = e;
             } else if (typeof e === 'object') {
@@ -26,6 +26,8 @@ return function deepmerge(target, src) {
                 }
             }
         });
+    } else if (array && deepmerge.mergeArrays === false) {
+        dst = src;
     } else {
         if (target && typeof target === 'object') {
             Object.keys(target).forEach(function (key) {

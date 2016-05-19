@@ -226,15 +226,15 @@ test('should replace arrays when configured to', function(t) {
     merge.mergeArrays = false
 
     var target = {
-        array: [1, 2, 3]
+        array: [{id: 123}, {id: 456}]
     }
 
 
     var src = {
-        array: [3, 4, 5]
+        array: [{id: 789}]
     }
 
-    t.deepEqual(merge(target, src), {array: [3, 4, 5]})
+    t.deepEqual(merge(target, src), {array: [{id: 789}]})
 
     delete merge.mergeArrays;
 

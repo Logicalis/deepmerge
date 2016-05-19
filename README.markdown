@@ -29,8 +29,9 @@ output:
 
 methods
 =======
-
+```js
 var merge = require('deepmerge')
+```
 
 merge(x, y)
 -----------
@@ -48,9 +49,10 @@ The merge will also merge arrays and array values.
 config
 ======
 
+```js
 merge.mergeArrays = false;
-
-This will replace arrays instead of merging them.
+```
+This will make merge method replace arrays instead of merging them.
 
 install
 =======

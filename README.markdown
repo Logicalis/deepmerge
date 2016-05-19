@@ -45,6 +45,13 @@ The merge is immutable, so neither `x` nor `y` will be modified.
 
 The merge will also merge arrays and array values.
 
+config
+======
+
+merge.mergeArrays = false;
+
+This will replace arrays instead of merging them.
+
 install
 =======
 

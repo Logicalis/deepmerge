@@ -220,3 +220,23 @@ test('should work on arrays of nested objects', function(t) {
     t.deepEqual(merge(target, src), expected)
     t.end()
 })
+
+
+test('should replace arrays when configured to', function(t) {
+    merge.mergeArrays = false
+
+    var target = {
+        array: [1, 2, 3]
+    }
+
+
+    var src = {
+        array: [3, 4, 5]
+    }
+
+    t.deepEqual(merge(target, src), {array: [3, 4, 5]})
+
+    delete merge.mergeArrays;
+
+    t.end()
+})

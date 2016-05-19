@@ -12,7 +12,7 @@ return function deepmerge(target, src) {
     var array = Array.isArray(src);
     var dst = array && [] || {};
 
-    if (array) {
+    if (array && deepmerge.mergeArrays !== false) {
         target = target || [];
         dst = dst.concat(target);
         src.forEach(function(e, i) {
